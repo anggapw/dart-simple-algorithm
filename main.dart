@@ -1,3 +1,5 @@
+import 'dart:math';
+
 void main(List<String> args) {
   List<String> gambar = ["Sekop", "Wajik", "Keriting", "Hati"];
   List<String> urutan = [
@@ -25,17 +27,20 @@ void main(List<String> args) {
     }
   }
 
-//   for (var a = meja.length - 1; a > 0; a--) {
-//     var b = Math.floor(Math.random() * a);
-//     var temp = meja[a];
-//     meja[a] = meja[b];
-//     meja[b] = temp;
-//   }
+  // print(meja);
+
+  var random = new Random();
+
+  for (var a = meja.length - 1; a > 0; a--) {
+    var b = random.nextInt(a);
+    var temp = meja[a];
+    meja[a] = meja[b];
+    meja[b] = temp;
+  }
 
   print('Anda mendapatkan kartu:');
 
   for (var a = 0; a < 5; a++) {
-    print(meja[a]['Urutan']);
-    print(meja[a]['Gambar']);
+    print('${meja[a]['Urutan']} ${meja[a]['Gambar']}');
   }
 }
